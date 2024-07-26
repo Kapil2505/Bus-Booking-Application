@@ -23,7 +23,6 @@ public class DriverService  {
     }
 
     public Driver getDetailsById(String id) {
-        Driver driver = driverRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("details not found !"));
-        return driver;
+        return driverRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("details not found !"));
     }
 }
