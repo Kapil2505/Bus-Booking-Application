@@ -68,3 +68,54 @@ MAIL_USERNAME=your-email
 MAIL_PASSWORD=your-email-password
 SMS_API_KEY=your-sms-api-key
 JWT_SECRET=your-jwt-secret
+
+## Usage
+- Access the application at `http://localhost:8080`.
+- View API documentation at `http://localhost:8080/swagger-ui/`.
+
+### API Endpoints:
+- **User Registration**: 
+    ```
+    POST /api/users/register
+    ```
+- **User Login**: 
+    ```
+    POST /api/users/login
+    ```
+- **Book a Bus**: 
+    ```
+    POST /api/bus/book
+    ```
+- **Get Bus Details**: 
+    ```
+    GET /api/bus/details/{id}
+    ```
+- **Process Payment**: 
+    ```
+    POST /api/payment/process
+    ```
+
+## API Documentation
+- Swagger API documentation is available at: 'http://localhost:8080/swagger-ui/'
+
+
+## Contributing
+1. Fork the repository.
+2. Create a new branch:
+    ```bash
+    git checkout -b feature-branch
+    ```
+3. Commit your changes:
+    ```bash
+    git commit -m 'Add feature'
+    ```
+4. Push to the branch:
+    ```bash
+    git push origin feature-branch
+    ```
+5. Open a pull request.
+
+## License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+
