@@ -10,7 +10,6 @@ A comprehensive Bus Booking Application built using Java, Spring Boot, Hibernate
 5. [Usage](#usage)
 6. [API Documentation](#api-documentation)
 7. [Contributing](#contributing)
-8. [License](#license)
 
 ## Features
 - Real-time bus booking with dynamic route optimization.
