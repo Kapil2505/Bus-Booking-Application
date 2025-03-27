@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 @Entity
 @Data
@@ -23,6 +24,11 @@ public class Driver {
     @Lob
     @Column(name="licence_image",nullable = false)
     private byte[] licenceImage;
+    @Column(nullable = false,unique = true)
+    @Email
+    private String email;
+    @Column(name="phone_number",nullable = false,unique = true,length = 10)
+    private String mobileNumber;
     @Column(nullable = false)
     private String address;
     @Column(name="expected_salary",nullable = false)

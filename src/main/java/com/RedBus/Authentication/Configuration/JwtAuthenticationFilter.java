@@ -18,6 +18,8 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     // inject dependencies
     @Autowired
     private JwtTokenProvider tokenProvider;
+
+    public static String User_Detail;
     @Autowired
     private CustomUserDetailsService customUserDetailsService;
     @Override
@@ -30,6 +32,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         if(StringUtils.hasText(token) && tokenProvider.validateToken(token)){
             // get username from token
             String username = tokenProvider.getUsernameFromJWT(token);
+            User_Detail = username;
             // load user associated with token
             UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
             UsernamePasswordAuthenticationToken authenticationToken = new

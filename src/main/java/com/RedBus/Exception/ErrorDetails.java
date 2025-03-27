@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 @Data
-
 public class ErrorDetails {
     private Date date;
     private String message;

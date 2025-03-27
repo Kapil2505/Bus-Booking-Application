@@ -30,4 +30,7 @@ public class TicketPrice {
     @JsonIgnore
     private BusOperator busOperator;
 
+
+    public TicketPrice(String ticketId, double v, String discountCode, double v1, double v2) {
+    }
 }

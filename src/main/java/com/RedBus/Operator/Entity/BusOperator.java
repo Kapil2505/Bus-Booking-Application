@@ -92,7 +92,5 @@ public class BusOperator {
     @JoinColumn(name="ticked_id",referencedColumnName = "ticket_id")
     private TicketPrice ticketPrice;
 
-    @OneToMany(mappedBy = "busOperator",cascade = CascadeType.ALL,orphanRemoval = true)
-    private List<Booking>bookings = new ArrayList<>();
 
 }

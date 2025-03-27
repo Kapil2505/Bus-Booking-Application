@@ -29,10 +29,10 @@ public class Blog {
     private String author;
 
     @Column(nullable = false)
-    private String from;
+    private String fromLocation;
 
     @Column(nullable = false)
-    private String to;
+    private String toLocation;
 
     @Column(nullable = false)
     private LocalDateTime createdAt;

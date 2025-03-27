@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface BlogRepository extends JpaRepository<Blog,String> {
 
-    List<Blog>findByFromAndTo(String fromCity,String toCity);
+    List<Blog>findByFromLocationAndToLocation(String fromCity,String toCity);
     List<Blog>findByAuthor(String author);
 
 }

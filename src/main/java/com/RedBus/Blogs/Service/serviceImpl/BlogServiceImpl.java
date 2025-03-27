@@ -35,8 +35,8 @@ public class BlogServiceImpl implements BlogService {
         Blog blog1 = repository.findById(id).orElseThrow(() -> new ResourceNotFoundException("blog is not found "));
         blog1.setTitle(blog.getTitle());
         blog1.setContent(blog.getContent());
-        blog1.setTo(blog.getTo());
-        blog1.setFrom(blog.getFrom());
+        blog1.setToLocation(blog.getToLocation());
+        blog1.setFromLocation(blog.getFromLocation());
         return repository.save(blog1);
     }
 
@@ -47,7 +47,7 @@ public class BlogServiceImpl implements BlogService {
 
     @Override
     public List<Blog> getUsingCities(String fromCity, String toCity) {
-        return repository.findByFromAndTo(fromCity,toCity);
+        return repository.findByFromLocationAndToLocation(fromCity,toCity);
     }
 
     @Override

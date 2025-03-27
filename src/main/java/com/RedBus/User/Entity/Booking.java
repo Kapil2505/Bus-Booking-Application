@@ -1,10 +1,12 @@
 package com.RedBus.User.Entity;
 
+import com.RedBus.Authentication.AuthEntity.AuthUsers;
 import com.RedBus.Operator.Entity.BusOperator;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.apache.catalina.User;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.UniqueElements;
 
@@ -23,10 +25,11 @@ public class Booking {
     @Id
     private String bookingId;
 
-
-    @ManyToOne(fetch = FetchType.LAZY)
-            @JoinColumn(name="bus_id")
+    @OneToOne
     private BusOperator busOperator;
+
+    @OneToOne
+    private AuthUsers user = new AuthUsers();
 
     @Column(name="ticket_id")
     private String ticketId;

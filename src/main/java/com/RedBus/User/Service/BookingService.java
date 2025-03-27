@@ -9,7 +9,7 @@ public interface BookingService {
     BookingDetailsDto mapToDto(Booking booking);
     boolean existsBySeatNumber(String seatNumber);
     BookingDetailsDto createBooking(String busId , String promoCode , PassengerDetails passengerDetails);
-    public String createPaymentIntent(Integer amount);
+
     // Inside BookingService Interface
     boolean cancelBooking(String bookingId);
     double calculateRefundAmount(String bookingId);

@@ -30,8 +30,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String usernameOrEmail) throws
-            UsernameNotFoundException {
+    public UserDetails loadUserByUsername(String usernameOrEmail) throws UsernameNotFoundException {
         AuthUsers user = userRepository.findByUserNameOrEmail(usernameOrEmail,
                         usernameOrEmail)
                 .orElseThrow(() ->

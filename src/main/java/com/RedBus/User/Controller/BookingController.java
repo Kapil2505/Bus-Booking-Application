@@ -11,6 +11,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -32,6 +33,7 @@ public class BookingController {
     @PreAuthorize("hasRole('USER')")
     @Operation(summary = "post operation to book ticket")
     @PostMapping("/bookBus")
+
     public ResponseEntity<?> bookBus(
             @RequestParam("busId") String busId,
             @RequestParam("promoCode") String promoCode,
@@ -84,7 +86,7 @@ public class BookingController {
     @PutMapping("/cancelBooking/{bookingId}")
     public ResponseEntity<?> cancelBooking(@PathVariable String bookingId) {
         try {
-            boolean canceled = bookingService.cancelBooking(bookingId);
+            boolean canceled =bookingService.cancelBooking(bookingId);
 
             if (canceled) {
                 // Transfer refund to the user's account
